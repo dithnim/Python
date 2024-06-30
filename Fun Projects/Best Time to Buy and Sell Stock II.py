@@ -32,13 +32,16 @@
 # 0 <= prices[i] <= 104
 
 def maxProfit(prices):
-    m = prices[0]
-    tot = 0
-    mx = 0
-    for i in range(1,len(prices)):
-        if prices[i] < m:
-            m = prices[i]
+    if len(prices) < 2:
+        return 0
 
+
+    tot = 0
+    for i in range(1,len(prices)):
+        if prices[i] > prices[i-1]:
+            tot += prices[i] - prices[i - 1]
+
+    return tot
 
             
-maxProfit([7,1,5,3,6,4])
+print(maxProfit([7,1,5,3,6,4]))
