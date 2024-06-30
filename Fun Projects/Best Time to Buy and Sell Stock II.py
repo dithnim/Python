@@ -38,7 +38,7 @@ def maxProfit(prices):
     for i in range(1,len(prices)):
         if prices[i] < m:
             m = prices[i]
+
+
             
-
-
 maxProfit([7,1,5,3,6,4])
